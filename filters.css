@@ -1,3 +1,9 @@
+/*
+ * This code was pinched unceremoniously from http://colortest.it
+ * There it is under the "Do Whatever The Fuck You Want With It" license, so
+ * in the same spirit, you may feel free to do so.
+ */
+
 .as-protanopia {
 	-webkit-filter: url(filters.svg#protanopia);
 	   -moz-filter: url(filters.svg#protanopia);

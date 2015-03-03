@@ -1,0 +1,8 @@
+{
+	"accessibility-simulation" : "Description of the AccessibilitySimulation extension",
+	"accessibility-simulation-none" : "Text for a drop down allowing a user to select a type of vision impairment to simulate.",
+	"accessibility-simulation-protanopia" : "Text for a drop down allowing a user to select a type of vision impairment to simulate.",
+	"accessibility-simulation-deuteranopia" : "Text for a drop down allowing a user to select a type of vision impairment to simulate.",
+	"accessibility-simulation-tritanopia" : "Text for a drop down allowing a user to select a type of vision impairment to simulate.",
+	"accessibility-simulation-monochromacy" : "Text for a drop down allowing a user to select a type of vision impairment to simulate."
+}

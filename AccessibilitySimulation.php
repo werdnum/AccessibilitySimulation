@@ -53,6 +53,13 @@ $wgResourceModules['ext.accessibility-simulation'] = array(
 	'styles' => 'filters.css',
 	'scripts' => 'accessibility-switch.js',
 	'dependencies' => 'oojs-ui',
+	'messages' => array(
+		'accessibility-simulation-none',
+		'accessibility-simulation-protanopia',
+		'accessibility-simulation-deuteranopia',
+		'accessibility-simulation-tritanopia',
+		'accessibility-simulation-monochromacy',
+	),
 );
 
 $wgHooks['BeforePageDisplay'][] = function( $out ) {

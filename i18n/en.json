@@ -1,3 +1,8 @@
 {
-	"accessibility-simulation" : "Provides simulation of various types of colour blindness"
+	"accessibility-simulation" : "Provides simulation of various types of colour blindness",
+	"accessibility-simulation-none" : "No simulation",
+	"accessibility-simulation-protanopia" : "Protanopia",
+	"accessibility-simulation-deuteranopia" : "Deuteranopia",
+	"accessibility-simulation-tritanopia" : "Tritanopia",
+	"accessibility-simulation-monochromacy" : "Monochromacy"
 }

@@ -93,7 +93,12 @@ $( function() {
 				newUrl;
 
 			selectSimulation( type );
-			newQueryParameters.simulation = type;
+
+			if ( type ) {
+				newQueryParameters.simulation = type;
+			} else {
+				delete newQueryParameters.simulation;
+			}
 
 			newUrl = '?' + $.param( newQueryParameters );
 

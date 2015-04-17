@@ -50,7 +50,10 @@ $wgResourceModules['ext.accessibility-simulation'] = array(
 	'remoteExtPath' => 'AccessibilitySimulation',
 	'localBasePath' => __DIR__,
 	'group' => 'ext.accessibility-simulation',
-	'styles' => 'filters.css',
+	'styles' => array(
+		'filters.css',
+		'dropdown.css',
+	),
 	'scripts' => 'accessibility-switch.js',
 	'dependencies' => 'oojs-ui',
 	'messages' => array(

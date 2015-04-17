@@ -1,0 +1,10 @@
+.accessibility-simulation-button {
+	border-left: 1px solid #2860B2;
+	background-color: #2B5ECF;
+	background-image: url( 'visionSimulator.svg' ), url( 'downTriangle.svg' );
+	background-repeat: no-repeat, no-repeat;
+	background-position: center left 10px, center right 10px;
+	background-size: 50% 50%, 20% 20%;
+	width: 65px;
+	height: 50px;
+}

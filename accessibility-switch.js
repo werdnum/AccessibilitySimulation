@@ -36,44 +36,59 @@ window.onpopstate = function( event ) {
 
 $( function() {
 	var $navBar = $( 'ul.navbar-head' ),
-		selector = new OO.ui.DropdownWidget( {
-			"label": mw.msg( 'accessibility-simulation' ),
-			"menu" : { 'items' : [
-				new OO.ui.MenuOptionWidget( {
-					'data' : '',
-					'label' : mw.msg( 'accessibility-simulation-none' ),
-					'selected' : true
-				} ),
-				new OO.ui.MenuOptionWidget( {
-					'data' : 'protanopia',
-					'label' : mw.msg( 'accessibility-simulation-protanopia' )
-				} ),
-				new OO.ui.MenuOptionWidget( {
-					'data' : 'deuteranopia',
-					'label' : mw.msg( 'accessibility-simulation-deuteranopia' )
-				} ),
-				new OO.ui.MenuOptionWidget( {
-					'data' : 'tritanopia',
-					'label' : mw.msg( 'accessibility-simulation-tritanopia' )
-				} ),
-				new OO.ui.MenuOptionWidget( {
-					'data' : 'monochromacy',
-					'label' : mw.msg( 'accessibility-simulation-monochromacy' )
-				} )
-			] }
-		} ),
-		menu = selector.getMenu(),
-		$newItem = $( '<li/>' ).append( selector.$element ),
+		$dropdown = $( '<ul>' )
+			.attr( {
+				'role': 'menu',
+				'aria-labelledby': 'Accessibility Simulation',
+				'class': 'dropdown-menu accessibility-simulation-dropdown'
+			} )
+			.append(
+				$( '<li>' ).append(
+					$( '<a>' )
+						.text( mw.msg( 'accessibility-simulation-none' ) )
+						.data( 'name', '' )
+				),
+				$( '<li>' ).append(
+					$( '<a>' )
+						.text( mw.msg( 'accessibility-simulation-protanopia' ) )
+						.data( 'name', 'protanopia' )
+				),
+				$( '<li>' ).append(
+					$( '<a>' )
+						.text( mw.msg( 'accessibility-simulation-deuteranopia' ) )
+						.data( 'name', 'deuteranopia' )
+				),
+				$( '<li>' ).append(
+					$( '<a>' )
+						.text( mw.msg( 'accessibility-simulation-tritanopia' ) )
+						.data( 'name', 'tritanopia' )
+				),
+				$( '<li>' ).append(
+					$( '<a>' )
+						.text( mw.msg( 'accessibility-simulation-monochromacy' ) )
+						.data( 'name', 'monochromacy' )
+				)
+			),
+		$dropdownButton = $( '<a>' )
+			.attr( {
+				'class': 'btn btn-default dropdown-toggle accessibility-simulation-button',
+				'role': 'button',
+				'data-toggle': 'dropdown',
+				'aria-expanded': 'true'
+			} ),
 		queryParameters = decodeQueryString( window.location.search ),
 		selectedSimulation = '';
 
 		if ( 'simulation' in queryParameters )
 			selectedSimulation = queryParameters.simulation;
 
-		$newItem.appendTo( $navBar );
+		$navBar.append( $( '<li>' )
+				.addClass( 'dropdown' )
+				.append( $dropdownButton, $dropdown )
+		);
 
-		menu.on( 'select', function( item ) {
-			var type = item.getData(),
+		$('.accessibility-simulation-dropdown a').on( 'click', function() {
+			var type = $( this ).data( 'name' ),
 				newQueryParameters = decodeQueryString( window.location.search ),
 				newUrl;
 
@@ -92,7 +107,5 @@ $( function() {
 				newUrl
 			);
 		} );
-
-		menu.selectItem( menu.getItemFromData( selectedSimulation ) );
 } );
 } )( jQuery, mediaWiki );

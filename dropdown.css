@@ -13,7 +13,9 @@
 	z-index: 3000;
 }
 
-.nav .open>a, .nav .open>a:hover, .nav .open>a:focus,
+.nav .open>a.accessibility-simulation-button,
+.nav .open>a.accessibility-simulation-button:hover,
+.nav .open>a.accessibility-simulation-button:focus,
 .nav > li > a.accessibility-simulation-button:focus,
 .nav > li > a.accessibility-simulation-button:hover {
 	background-color: #163663;

@@ -35,7 +35,7 @@ window.onpopstate = function( event ) {
 };
 
 $( function() {
-	var $navBar = $( 'ul.navbar-head' ),
+	var $extraSpace = $( '#extra-space' ),
 		$dropdown = $( '<ul>' )
 			.attr( {
 				'role': 'menu',
@@ -82,7 +82,7 @@ $( function() {
 		if ( 'simulation' in queryParameters )
 			selectedSimulation = queryParameters.simulation;
 
-		$navBar.append( $( '<li>' )
+		$extraSpace.before( $( '<li>' )
 				.addClass( 'dropdown' )
 				.append( $dropdownButton, $dropdown )
 		);

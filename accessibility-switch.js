@@ -35,7 +35,7 @@ window.onpopstate = function( event ) {
 };
 
 $( function() {
-	var $navBar = $( 'ul.navbar-right' ),
+	var $navBar = $( 'ul.navbar-head' ),
 		selector = new OO.ui.DropdownWidget( {
 			"label": mw.msg( 'accessibility-simulation' ),
 			"menu" : { 'items' : [
@@ -70,7 +70,7 @@ $( function() {
 		if ( 'simulation' in queryParameters )
 			selectedSimulation = queryParameters.simulation;
 
-		$newItem.prependTo( $navBar );
+		$newItem.appendTo( $navBar );
 
 		menu.on( 'select', function( item ) {
 			var type = item.getData(),

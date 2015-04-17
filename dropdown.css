@@ -9,6 +9,10 @@
 	height: 50px;
 }
 
+.accessibility-simulation-dropdown {
+	z-index: 3000;
+}
+
 .accessibility-simulation-dropdown li {
 	cursor: pointer;
 }
